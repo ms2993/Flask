@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+Market
+{% endblock %}
+
+{% block body %}
+
+<body class="center">
+    <h1>Create Your Account:</h1>
+    <br>
+    <div class="container">
+        <form method="POST" class="form-register" style="color: white;">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+
+            {{form.username.label()}}
+            {{form.username(class="form-control", placeholder ="User Name")}}
+
+            {{form.email.label()}}
+            {{form.email(class ="form-control", plcaeholder="Email")}}
+
+            {{form.password1.label()}}
+            {{form.password1(class ="form-control", placeholder ="Password")}}
+
+            {{form.password2.label()}}
+            {{ form.password2(class ="form-control", placeholder ="retype Password")}}
+
+            <br>
+            {{ form.submit(class ="btn btn-block btn-primary btn-lg ")}}
+
+
+        </form>
+    </div>
+
+</body>
+{% endblock %}
